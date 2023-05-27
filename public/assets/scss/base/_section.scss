@@ -1,0 +1,68 @@
+.section-padding {
+  @include padding(py, rem(70px));
+}
+
+.section-padding-xl {
+  @include padding(py, rem(70px));
+
+  @include lg {
+    @include padding(py, rem(140px));
+  }
+}
+
+.section-title-left {
+  h2 {
+    line-height: 1.24;
+    margin-bottom: rem(25px);
+    font-weight: 700;
+  }
+
+  span {
+    font-family: $inter;
+    font-size: rem(20px);
+    display: block;
+    color: $black;
+    
+    @include md {
+      font-size: rem(40px);
+      line-height: rem(48px);
+    }
+  }
+
+  p {
+    margin-top: rem(15px);
+    font-size: rem(15px);
+    line-height: rem(27px);
+
+    @include xl {
+      width: 80%;
+    }
+  }
+
+  .btn {
+    margin-top: rem(46px);
+  }
+}
+
+.section-title-center {
+  text-align: center;
+  padding-bottom: rem(45px);
+
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+
+  p {
+    @include margin(mx, auto);
+    padding-top: rem(10px);
+
+    @include md {
+      width: 80%;
+    }
+
+    @include xl {
+      width: 40%;
+    }
+  }
+}

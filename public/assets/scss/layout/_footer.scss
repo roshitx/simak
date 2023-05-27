@@ -1,0 +1,158 @@
+/*----------------------------------------*/
+/*  21. Footer Area
+/*----------------------------------------*/
+.footer-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .footer-shape {
+    @include absolute(bottom -111px left -50px);
+    @include size(223px);
+    border-radius: 50%;
+    background-color: #FFF7DD;
+    z-index: -1;
+    display: none;
+
+    @include lg {
+      display: block;
+    }
+  }
+}
+
+@include footer-menu(rem(17px), rgba($white, 0.6), 0, $h-color: rgba($white, 1));
+
+.footer-top {
+  padding: rem(70px) 0 rem(50px);
+
+  @include lg {
+    padding: rem(135px) 0 rem(115px);
+  }
+
+  .footer-content {
+    @include sm {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+
+      img {
+        margin-right: rem(30px);
+      }
+    }
+
+    @include lg {
+      display: block;
+    }
+
+    span {
+      font-size: rem(24px);
+      font-weight: 700;
+      line-height: rem(36px);
+      display: block;
+      color: $white;
+      margin-bottom: rem(30px);
+
+      @include sm {
+        margin-bottom: 0;
+      }
+
+      @include lg {
+        margin-bottom: rem(50px);
+      }
+    }
+  }
+
+  .footer-menu {
+    padding-top: rem(35px);
+
+    @include lg {
+      padding-top: 0;
+    }
+
+    h4 {
+      color: $white;
+      font-size: rem(18px);
+      margin-bottom: rem(35px);
+    }
+
+    li+li {
+      padding-top: 25px;
+    }
+  }
+}
+
+.footer-bottom {
+  @include padding(py, 1.5rem);
+  @include border(top, 1px, solid, rgba($white, 0.1));
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include lg {
+      flex-direction: row;
+    }
+
+    li {
+      span {
+        font-size: rem(14px);
+        color: rgba($white, 0.8);
+        padding-left: rem(24px);
+        @include padding(py, rem(16px));
+        display: block;
+
+        @include lg {
+          flex-direction: row;
+          @include padding(py, 0);
+        }
+      }
+    }
+  }
+
+  .social-link-bg {
+    flex-direction: row;
+    justify-content: center;
+    @include margin(my, rem(16px));
+
+    @include lg {
+      justify-content: flex-end;
+      @include margin(my, 0);
+    }
+  }
+}
+
+.footer-bottom-menu {
+  text-align: center;
+
+  ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @include lg {
+    text-align: left;
+
+    ul {
+      justify-content: flex-start;
+    }
+  }
+
+  li {
+    display: inline-block;
+
+    a {
+      padding-left: rem(10px);
+      font-size: rem(14px);
+
+      @include xl {
+        padding-left: rem(36px);
+      }
+
+      @include hover {
+        color: $white;
+      }
+    }
+  }
+}

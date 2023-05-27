@@ -1,0 +1,612 @@
+/*================================================
+Features CSS
+=================================================*/
+.features {
+  position: relative;
+  @include padding(pt, rem(70px));
+
+  @include lg {
+    @include padding(pt, rem(160px));
+  }
+
+  &-image {
+    position: relative;
+
+    @include lg {
+      @include relative(left rem(-40px));
+    }
+
+    .features-object1 {
+      @include absolute(top 0 left 40%);
+    }
+
+    .features-object2 {
+      @include absolute(top 21% left 22%);
+
+      @include sm {
+        top: 21%;
+        left: 25%;
+      }
+
+      @include md {
+        left: 22%;
+      }
+
+      @include md {
+        left: 24%;
+      }
+    }
+
+    .features-object3 {
+      @include absolute(top 13% left 29%);
+
+      @media screen and (min-width: 425px) {
+        top: 15%;
+      }
+
+      @include sm {
+        top: 16%;
+      }
+
+      @include sm {
+        left: 26%;
+      }
+
+      @include lg {
+        left: 29%;
+      }
+    }
+
+    .features-object4 {
+      @include absolute(top 50% left 10px);
+      transform: translateY(-50%);
+      z-index: 1;
+
+      @include sm {
+        left: 25px;
+      }
+    }
+
+    .features-object5 {
+      @include absolute(top 45% left 5px);
+      transform: translateY(-50%);
+
+      @include sm {
+        top: 47%;
+        left: 15px;
+      }
+    }
+
+    .features-object6 {
+      @include absolute(top 15px left 37%);
+      width: 10%;
+
+      @media screen and (min-width: 425px) {
+        top: 22px;
+        left: 35%;
+        width: auto;
+      }
+    }
+
+    .features-object7 {
+      @include absolute(top 0 left 40%);
+      width: 5%;
+
+      @media screen and (min-width: 425px) {
+        left: 40%;
+        width: auto;
+      }
+    }
+
+    .features-object8 {
+      @include absolute(top 45px right 0);
+      z-index: 1;
+      width: 10%;
+
+      @include sm {
+        top: 75px;
+        width: auto;
+      }
+    }
+
+    .features-object9 {
+      @include absolute(top 35px right 15px);
+      width: 10%;
+
+      @include sm {
+        top: 65px;
+        width: auto;
+      }
+    }
+  }
+
+  &-content {
+    padding-top: rem(50px);
+
+    @include lg {
+      padding-top: rem(20px);
+    }
+
+    h2 {
+      position: relative;
+      font-weight: 700;
+      z-index: 9;
+
+      @include md {
+        font-size: rem(48px);
+        line-height: rem(62px);
+      }
+
+      @include pseudo(top rem(6px) left 0) {
+        @include size(rem(230px), rem(45px));
+        background: #FCE7E9;
+        z-index: -1;
+
+        @include sm {
+          width: rem(250px);
+        }
+
+        @include md {
+          @include size(rem(306px), rem(50px));
+        }
+      }
+    }
+
+    h3 {
+      font-family: $inter;
+      font-weight: 400;
+      padding-top: rem(18px);
+
+      @include lg {
+        line-height: rem(48px);
+      }
+
+      span {
+        font-weight: 700;
+        color: $red-700;
+      }
+    }
+
+    p {
+      font-size: rem(15px);
+      padding-top: rem(20px);
+      line-height: rem(27px);
+
+      @include lg {
+        width: 86%;
+      }
+    }
+
+    &-four {
+      h2 {
+        @include md {
+          &::before {
+            width: 170px;
+            left: 41%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Features Style two
+.features-area-two {
+  &.section-padding {
+    @include lg {
+      padding-bottom: rem(140px);
+    }
+  }
+
+  .features-image {
+    @include relative(left 0);
+  }
+
+  .features-content {
+    padding-top: 0;
+
+    h2 {
+      @include pseudo(bottom 0) {
+        top: auto;
+        @include size(rem(215px), rem(50px));
+      }
+
+      @include lg {
+        width: 90%;
+      }
+    }
+
+    p {
+      padding-top: rem(23px);
+      padding-bottom: rem(22px);
+
+      @include lg {
+        width: 65%;
+      }
+    }
+  }
+
+  .features-counter {
+    position: relative;
+    padding-left: rem(15px);
+
+    @include pseudo(top 0 left 0) {
+      @include size(rem(6px), rem(114px));
+      background: $red-700;
+    }
+
+    padding-bottom: rem(50px);
+
+    @include lg {
+      padding-bottom: 0;
+    }
+
+    span {
+      font-size: rem(22px);
+      font-weight: 600;
+      color: $black;
+      line-height: 1.2;
+      margin-bottom: rem(5px);
+      display: inline-block;
+    }
+
+    strong {
+      font-size: rem(50px);
+      font-weight: 700;
+      color: $black;
+      line-height: 1;
+
+      span {
+        font-size: 50px;
+        font-weight: 700;
+      }
+    }
+
+    p {
+      padding-top: 0;
+      padding-bottom: 0;
+      color: $black;
+      line-height: 1.2;
+    }
+  }
+}
+
+// Features Style Three
+.features-area-three {
+  @include padding(py, rem(70px));
+
+  @include lg {
+    padding-top: rem(140px);
+    padding-bottom: rem(135px);
+  }
+
+  .features-form {
+    margin-top: rem(50px);
+  }
+
+  .form-group {
+    @include margin(mx, auto);
+  }
+
+  .features-tab-content {
+    .tab-pane {
+      padding-top: rem(40px);
+    }
+  }
+
+  .features-tab-image {
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// Features Style Four
+.features-area-four {
+  background: $white-800;
+  @include padding(pt, rem(70px));
+
+  @include lg {
+    padding-top: rem(85px);
+    padding-bottom: rem(140px);
+  }
+
+  .features-image {
+    left: 0;
+  }
+
+  .features-content {
+    p {
+      @include xl {
+        width: 70%;
+      }
+    }
+  }
+}
+
+// Features style Five
+.features-area-five {
+  @include lg {
+    @include padding(pt, rem(135px));
+  }
+
+  .section-title-center {
+    h2 {
+      @include lg {
+        width: 50%;
+        @include margin(mx, auto);
+      }
+    }
+  }
+
+  .feature-image {
+    position: relative;
+
+    img {
+      @include margin(mx, auto);
+    }
+
+    .features8 {
+      @include absolute(bottom 165px left 0);
+      width: 25%;
+
+      @media only screen and (min-width: 425px) {
+        bottom: 115px;
+      }
+
+      @include lg {
+        bottom: 105px;
+        width: auto;
+      }
+    }
+
+    .features9 {
+      @include absolute(bottom 165px right 0);
+      width: 25%;
+
+      @media only screen and (min-width: 425px) {
+        bottom: 115px;
+        width: 45%;
+      }
+
+      @include lg {
+        bottom: 105px;
+        width: auto;
+      }
+    }
+
+
+    p {
+      text-align: center;
+      padding-top: rem(40px);
+
+      @include lg {
+        width: 45%;
+        @include margin(mx, auto);
+      }
+    }
+  }
+}
+
+// Features Style Six
+.features-area-six {
+  &.section-padding {
+    padding-top: rem(120px);
+    padding-bottom: 0;
+  }
+
+  .section-title-left {
+    padding-top: rem(40px);
+
+    @include lg {
+      padding-top: 0;
+      padding-left: rem(30px);
+    }
+
+    h2 {
+      margin-bottom: rem(15px);
+
+      @include lg {
+        width: 86%;
+      }
+    }
+
+    p {
+      @include lg {
+        width: 91%;
+      }
+    }
+  }
+
+  .feature-image {
+    img {
+      @include margin(mx, auto);
+    }
+  }
+}
+
+// Features Style Six
+.features-area-seven {
+  .section-title-left {
+    padding-left: 0;
+
+    p {
+      @include lg {
+        width: 97%;
+      }
+    }
+  }
+
+  .feature-image {
+    img {
+      @include margin(mx, auto);
+    }
+  }
+}
+
+// Features Style Eight
+.features-area-eight {
+
+  @include lg {
+    padding-top: rem(125px);
+    padding-bottom: rem(140px);
+  }
+
+  .feature-image {
+    position: relative;
+
+    @include lg {
+      margin-top: rem(30px);
+    }
+
+    img {
+      @include margin(mx, auto);
+    }
+
+    .features-object10 {
+      @include absolute(top 0 left 118px);
+
+      @include md {
+        top: 21px
+      }
+    }
+
+    .features-object11 {
+      @include absolute(top 63px left 36px);
+
+      @include md {
+        top: 107px;
+      }
+    }
+
+    .features-object12 {
+      @include absolute(top 46px left 58px);
+
+      @include md {
+        top: 91px;
+      }
+    }
+
+    .features-object13 {
+      @include absolute(top 8px right 35px);
+      z-index: 1;
+
+      @include md {
+        right: 106px;
+      }
+    }
+
+    .features-object14 {
+      @include absolute(top 0 right 45px);
+
+      @include md {
+        right: 117px;
+      }
+    }
+  }
+
+  .section-title-left {
+    padding-top: rem(40px);
+
+    @include lg {
+      padding-top: 0;
+    }
+
+    h2 {
+      @include lg {
+        width: 80%;
+      }
+    }
+
+    p {
+      @include lg {
+        width: 83%;
+      }
+    }
+  }
+
+  .features-service {
+    padding-top: rem(40px);
+
+    p {
+      margin-top: rem(25px);
+    }
+  }
+
+  .features-icon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: rem(18px);
+    font-weight: 600;
+    color: $black;
+
+    img {
+      margin-right: rem(26px);
+    }
+  }
+}
+
+// Features Style Nine
+.features-area-nine {
+  .section-title-center {
+    h2 {
+      font-weight: 700;
+      margin-bottom: rem(6px);
+    }
+  }
+
+  .features-item {
+    padding: rem(30px) rem(20px);
+    background: $white;
+    border-radius: rem(10px);
+    @include property;
+    margin-top: rem(15px);
+
+    @include md {
+      padding: rem(50px) rem(40px);
+    }
+
+    h4 {
+      font-size: rem(18px);
+      font-weight: 600;
+      line-height: 25px;
+      margin-top: rem(20px);
+      width: 90%;
+
+      a {
+        @include property;
+        text-decoration: none;
+      }
+    }
+
+    hr {
+      background: $black;
+      width: 100%;
+      margin-top: rem(30px);
+      margin-bottom: rem(20px);
+
+      @include md {
+        margin-top: rem(80px);
+      }
+    }
+
+    p {
+      font-size: rem(15px);
+      color: $black;
+      line-height: rem(27px);
+    }
+
+    @include hover {
+      box-shadow: 0px 20px 50px rgba(23, 23, 23, 0.08);
+
+      h4 {
+        a {
+          text-decoration: underline;
+          color: $black;
+        }
+      }
+    }
+  }
+}

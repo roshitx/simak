@@ -1,0 +1,70 @@
+/*================================================
+Logo-grid CSS
+=================================================*/
+.logo-grid-area {
+  padding-top: rem(70px);
+  padding-bottom: rem(70px);
+
+  @include lg {
+    padding-top: rem(70px);
+    padding-bottom: rem(140px);
+  }
+
+  .logo-grid-wrapper {
+    max-width: rem(1226px);
+    background: $yellow-150;
+    @include radius(all, rem(30px));
+    padding: rem(40px) rem(20px);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include lg {
+      padding: rem(118px) rem(65px);
+    }
+
+    .section-title-left {
+      margin-top: rem(35px);
+
+      @include lg {
+        margin-top: 0;
+      }
+
+      h2 {
+        @include md {
+          margin-bottom: 0;
+        }
+
+        @include lg {
+          margin-bottom: rem(25px);
+        }
+      }
+
+      span {
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.logo-grid-item {
+  max-width: rem(110px);
+  height: rem(96px);
+  @include radius(all, rem(10px));
+  background: $white;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+
+  img {
+    margin: auto;
+  }
+}
+
+.logo-grid-text {
+  background: transparent;
+
+  h3 {
+    font-weight: 700;
+  }
+}

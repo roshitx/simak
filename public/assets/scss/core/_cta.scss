@@ -1,0 +1,76 @@
+/*================================================
+CTA CSS
+=================================================*/
+.cta-area {
+  position: relative;
+
+  .section-title-center {
+    .mt-16 {
+      margin-top: rem(32px);
+
+      @include md {
+        margin-top: rem(64px);
+      }
+    }
+  }
+
+  .shape7 {
+    @include absolute(top rem(-25px) left 10%);
+    @include size(rem(50px));
+    background-color: $red-700;
+    border-radius: 50%;
+
+    @include md {
+      @include size(rem(90px));
+    }
+  }
+
+  .shape8 {
+    @include absolute(top rem(-40px) right 10%);
+  }
+
+  .shape9 {
+    @include absolute(top rem(-26px) right 10%);
+    @include size(50px);
+    border: 2px solid $black;
+    background-color: #37BD8A;
+    transform: rotate(45deg);
+  }
+
+  .shape10 {
+    @include absolute(top rem(80px) right 12%);
+  }
+
+  .shape11 {
+    @include absolute(bottom 30% left 15%);
+  }
+
+  .shape12 {
+    @include absolute(bottom rem(-20px) left rem(48px));
+    @include size(40px);
+    z-index: 9;
+    border: 2px solid $black;
+    background-color: #EFBA34;
+    transform: rotate(45deg);
+
+    @include md {
+      bottom: rem(-38px);
+      @include size(72px);
+    }
+  }
+}
+
+.cta-area-two {
+  @include lg {
+    &.section-padding {
+      padding-top: rem(85px);
+      padding-bottom: rem(85px);
+    }
+  }
+
+  .section-title-center {
+    h2 {
+      font-size: rem(40px);
+    }
+  }
+}

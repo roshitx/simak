@@ -1,0 +1,45 @@
+/*
+Template Name: Landpagy Landing Page
+Author       :
+Version      : 1.0
+*/
+
+/*==============================================================================
+[Table of contents]
+===================
+  01. Theme default CSS
+  02. Header Area
+  03. Banner Area
+  05. Client Area
+  06. CTA Area
+  07. FAQ Area
+  08. Features Area
+  09. Logo-grid Area
+  10. Pricing Area
+  11. Service Area
+  12. Team Area
+  13. Testimonial Area
+  14. Why-Choose Area
+  15. About Page
+  19. Contact Page
+  20. Help Center Page
+  21. Footer Area
+==============================================================================*/
+/*----------------------------------------*/
+/*  01. Theme default CSS
+/*----------------------------------------*/
+@import 'abstracts/index';
+@import 'base/index';
+@import 'utilities/index';
+@import 'components/index';
+@import 'layout/index';
+
+.container-fluid {
+  @include lg {
+    padding-left: rem(80px);
+    padding-right: rem(80px);
+  }
+}
+
+@import 'core/index';
+@import 'pages/index';

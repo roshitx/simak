@@ -1,0 +1,708 @@
+/*================================================
+Banner CSS
+=================================================*/
+.banner-area {
+  position: relative;
+  z-index: 1;
+  // margin-top: -7.6875rem;
+  padding-top: rem(80px);
+  padding-bottom: rem(54px);
+  overflow: hidden;
+  background: linear-gradient(256.17deg, #FFF6D6 1.04%, rgba(255, 255, 255, 0) 100%);
+
+  @include md {
+    padding-top: rem(100px);
+  }
+
+  @include lg {
+    max-height: 55rem;
+    padding-top: rem(245px);
+    padding-bottom: rem(245px);
+  }
+
+  .banner-shape-2 {
+    @include absolute(top 50% left 0);
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+
+  &.feature-banner {
+    @include lg {
+      max-height: rem(742px);
+    }
+  }
+}
+
+.banner-left {
+  padding-top: rem(50px);
+
+  @include md {
+    padding-top: 0;
+  }
+
+  h1 {
+    font-weight: 900;
+    line-height: 1.1;
+
+    span {
+      color: $red-700;
+      position: relative;
+
+      svg {
+        width: 100%;
+        @include absolute(bottom 0 left 0);
+
+        @include md {
+          @include absolute(bottom 0.375rem left -0.625rem);
+        }
+      }
+    }
+  }
+
+  .banner-para {
+    line-height: rem(28px);
+    padding-top: rem(28px);
+    padding-bottom: rem(10px);
+
+    @include lg {
+      padding-right: rem(50px);
+    }
+  }
+}
+
+.sub-content {
+  @include fs-rem(15px);
+  padding-top: rem(20px);
+  display: block;
+}
+
+.banner-right {
+  position: relative;
+  height: 315px;
+
+  @media screen and (min-width: 425px) {
+    height: 378px;
+  }
+
+  @include sm {
+    height: 450px;
+  }
+
+  @include md {
+    height: 337px;
+  }
+
+  @include lg {
+    height: 413px;
+  }
+
+  @include xl {
+    height: 450px;
+    left: rem(52px);
+  }
+
+  .banner-shape-1 {
+    @include absolute(top rem(30px) left rem(-25px));
+  }
+
+  .banner-shapes {
+    @include absolute(top 0 left rem(64px));
+    @include size(rem(70px));
+    border-radius: 50%;
+    background-color: $red-700;
+
+    @include lg {
+      top: rem(-65px);
+      @include size(rem(125px));
+    }
+  }
+
+  .banner-shapes7 {
+    @include absolute(top 25px left rem(17px));
+    width: 30%;
+
+    @media only screen and (min-width: 425px) {
+      width: 24%;
+    }
+
+    @include md {
+      width: 30%;
+    }
+
+    @include md {
+      top: 0;
+      width: auto;
+    }
+  }
+
+  .banner-shapes2 {
+    @include absolute(top rem(140px) left 0);
+
+    @include lg {
+      top: rem(170px);
+    }
+  }
+
+  .banner-shapes3 {
+    @include absolute(top rem(30px) right rem(65px));
+    z-index: 1;
+    width: 30%;
+
+    @media screen and (min-width: 425px) {
+      right: rem(95px);
+    }
+
+    @include sm {
+      right: rem(130px);
+    }
+
+    @include md {
+      right: rem(74px);
+    }
+
+    @include lg {
+      top: 10px;
+      right: rem(66px);
+    }
+
+    @include xl {
+      right: rem(76px);
+      top: -20px;
+    }
+  }
+
+  .banner-shapes4 {
+    @include absolute(top rem(120px) right 0);
+
+    @include lg {
+      right: rem(-40px);
+    }
+  }
+
+  .banner-shapes5 {
+    @include absolute(bottom 0 right 0);
+
+    @include lg {
+      right: rem(-45px);
+    }
+  }
+
+  .banner-shapes6 {
+    @include absolute(top rem(120px) right -30px);
+
+    @include sm {
+      right: 0;
+    }
+
+    @include md {
+      right: rem(-35px);
+    }
+
+    @include lg {
+      right: rem(-80px);
+    }
+  }
+}
+
+.banner-image {
+  position: relative;
+
+  .features-object6 {
+    @include absolute(top 15px left 37%);
+    width: 10%;
+
+    @media screen and (min-width: 425px) {
+      top: 22px;
+      left: 35%;
+      width: auto;
+    }
+  }
+
+  .features-object7 {
+    @include absolute(top 0 left 40%);
+    width: 5%;
+
+    @media screen and (min-width: 425px) {
+      left: 40%;
+      width: auto;
+    }
+  }
+
+  .features-object8 {
+    @include absolute(top 45px right 0);
+    z-index: 1;
+    width: 10%;
+
+    @include sm {
+      top: 75px;
+      width: auto;
+    }
+
+    @include lg {
+      top: 55px;
+      width: 6%;
+    }
+
+    @include xl {
+      top: 75px;
+      width: auto
+    }
+  }
+
+  .features-object9 {
+    @include absolute(top 35px right 15px);
+    width: 10%;
+
+    @include sm {
+      top: 65px;
+      width: auto;
+    }
+
+    @include lg {
+      top: 45px;
+      width: 6%;
+    }
+
+    @include xl {
+      top: 65px;
+      width: auto
+    }
+  }
+
+  .shape13 {
+    @include absolute(bottom rem(10px) left 0);
+    @include size(rem(50px));
+    background-color: $red-700;
+    border-radius: 50%;
+    z-index: -1;
+
+    @include md {
+      @include size(rem(114px));
+      bottom: rem(25px);
+      left: rem(-25px);
+    }
+
+    @include lg {
+      @include size(rem(80px));
+      left: rem(225px);
+    }
+
+    @include xl {
+      @include size(rem(114px));
+      left: rem(-25px);
+    }
+  }
+
+  .shape14 {
+    @include absolute(top rem(50px) right 120px);
+    @include size(rem(68px));
+    background-color: $white;
+    border: 4px solid $red-700;
+    border-radius: 50%;
+    z-index: -1;
+
+    @include lg {
+      top: 20px;
+      right: 80px;
+    }
+
+    @include xl {
+      top: 50px;
+      right: 120px;
+    }
+  }
+}
+
+.banner-right-two {
+  position: relative;
+
+  @include lg {
+    @include absolute(top 50% right 0);
+    transform: translateY(-50%);
+
+    img {
+      width: 65%;
+      margin-left: auto;
+    }
+  }
+
+  @include xl {
+    right: 2%;
+
+    img {
+      width: auto;
+    }
+  }
+
+  @include media-up(xxl) {
+    right: 10%;
+
+    img {
+      width: auto;
+    }
+  }
+}
+
+.header-form {
+  position: relative;
+}
+
+.pricing-banner {
+  position: relative;
+  height: 450px;
+  padding-top: 155px;
+  background: linear-gradient(102.7deg, rgba(252, 231, 233, 0.2) 0.49%, rgba(255, 247, 221, 0.2) 97.86%);
+
+  @include sm {
+    height: rem(500px);
+  }
+
+  @include md {
+    height: rem(550px);
+  }
+
+  @include lg {
+    padding-top: 245px;
+    height: rem(875px);
+  }
+
+  .section-title-center {
+    position: relative;
+    z-index: 999;
+
+    h1 {
+      font-family: Elagond;
+      font-size: 75px;
+
+      @media screen and (min-width: 425px) {
+        font-size: 95px;
+      }
+
+      @include sm {
+        font-size: 130px;
+      }
+
+      @include lg {
+        font-size: 160px;
+      }
+
+      @include xl {
+        font-size: 207px;
+        line-height: 1;
+      }
+
+      span {
+        color: $red-700;
+      }
+
+    }
+
+    h2 {
+      margin-top: 55px;
+
+      span {
+        color: $white;
+      }
+
+      @include md {
+        position: relative;
+        top: -23px;
+
+        span {
+          font-size: 65px;
+          @include padding(px, 50px);
+          position: relative;
+          top: 10px;
+        }
+      }
+
+      @include lg {
+        font-size: rem(50px);
+        margin-top: 80px;
+
+        span {
+          font-size: rem(88px);
+          @include padding(px, 60px);
+        }
+      }
+
+      @include xl {
+        top: -10px;
+      }
+    }
+  }
+
+  .banner-shape {
+    max-height: rem(875px);
+    width: 100%;
+  }
+
+  .banner-shapes {
+    @include absolute(top 130px left 0 right 0);
+    margin: auto;
+    @include size(rem(50px));
+    border-radius: 50%;
+    background-color: $red-700;
+
+    @include md {
+      @include size(rem(78px));
+    }
+
+    @include lg {
+      top: 170px;
+      @include size(rem(125px));
+    }
+  }
+
+  .pricing-shape-2 {
+    @include absolute(top 175px left 0 right 0);
+    margin: auto;
+    z-index: 1;
+    width: 70%;
+
+    @include md {
+      width: 50%;
+    }
+
+    @include lg {
+      width: auto;
+      top: 140px;
+    }
+  }
+
+  .pricing-shape-3 {
+    @include absolute(bottom 75px left 40px right 0);
+    top: auto;
+    margin: auto;
+    z-index: 1;
+    width: 30%;
+
+    @media screen and (min-width: 425px) {
+      bottom: 50px;
+      width: 22%;
+    }
+
+    @include sm {
+      width: 25%;
+    }
+
+    @include md {
+      width: 25%;
+    }
+
+    @include lg {
+      width: auto;
+      bottom: 158px;
+      left: 70px;
+    }
+  }
+
+  .pricing-shape-4 {
+    @include absolute(top 150px left 35%);
+    margin: auto;
+    z-index: 1;
+    width: 19%;
+
+    @include sm {
+      top: 155px;
+      left: 36%;
+      width: 16%;
+    }
+
+    @include md {
+      width: 12%;
+      left: 40%;
+    }
+
+    @include lg {
+      top: 230px;
+      width: auto;
+    }
+
+    @include xl {
+      left: 41%;
+    }
+
+    @include xxl {
+      left: 45%;
+    }
+  }
+
+  .pricing-shape-5 {
+    @include absolute(bottom 20px left 20px);
+    z-index: 1;
+    width: 10%;
+
+    @include md {
+      width: auto;
+    }
+
+    @include xl {
+      bottom: 90px;
+      left: 9%;
+    }
+  }
+
+  .pricing-shape-12 {
+    @include absolute(bottom 30px left 10px);
+    width: 10%;
+
+    @include md {
+      width: auto;
+    }
+
+    @include xl {
+      bottom: 106px;
+      left: 8%;
+    }
+  }
+
+  .pricing-shape-6 {
+    @include absolute(bottom 34% left 10%);
+    z-index: 1;
+    width: 20%;
+
+    @media screen and (min-width: 425px) {
+      bottom: 25%;
+    }
+
+    @include md {
+      width: auto;
+      bottom: 30%;
+      left: 24%;
+    }
+
+    @include lg {
+      bottom: 40%;
+      left: 23%;
+    }
+
+    @include xl {
+      left: 31%;
+      bottom: 37%;
+    }
+
+    @include xxl {
+      left: 35%;
+    }
+  }
+
+  .pricing-shape-7,
+  .pricing-shape-11 {
+    @include absolute(top 28% right 5%);
+    z-index: 2;
+    width: 15%;
+
+    @include sm {
+      width: 10%;
+    }
+
+    @include md {
+      width: auto;
+    }
+
+    @include lg {
+      top: 18%;
+      right: 6%;
+    }
+
+    @include xl {
+      top: 25%;
+      right: 10%;
+    }
+  }
+
+  .pricing-shape-11 {
+    top: 24%;
+    right: 9%;
+    z-index: 1;
+    width: 7%;
+
+    @include sm {
+      width: 4%;
+    }
+
+    @include md {
+      right: 6%;
+      width: auto;
+    }
+
+    @include lg {
+      top: 16%;
+      right: 7%;
+    }
+
+    @include xl {
+      top: 23%;
+      right: 11%;
+    }
+  }
+
+  .pricing-shape-8 {
+    @include absolute(top 55% right 0);
+    z-index: 1;
+    width: 20%;
+
+    @include md {
+      width: 15%;
+    }
+
+    @include lg {
+      width: auto;
+      top: 40%;
+      right: 0;
+    }
+
+    @include xl {
+      right: 13%;
+    }
+  }
+
+  .pricing-shape-9 {
+    @include absolute(bottom 34% right 12%);
+    z-index: 1;
+    width: 15%;
+
+    @media screen and (min-width: 425px) {
+      bottom: 27%;
+    }
+
+    @include md {
+      width: 10%;
+      bottom: 30%;
+      right: 23%;
+    }
+
+    @include lg {
+      width: auto;
+      bottom: 40%;
+      right: 22%;
+    }
+
+    @include xl {
+      right: 30%;
+      bottom: 38%;
+    }
+
+    @include xxl {
+      right: 35%;
+    }
+  }
+
+  .pricing-shape-10 {
+    @include absolute(bottom 40% left 0);
+    z-index: 1;
+
+    @include lg {
+      left: 0;
+    }
+
+    @include xl {
+      left: 11%;
+    }
+
+    @include xxl {
+      left: 22%;
+    }
+  }
+}

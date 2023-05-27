@@ -1,0 +1,20 @@
+// Dropdown Menu
+.dropdown{
+  position: relative;
+
+  .sub-menu {
+    @include dropdown-menu($position: top 100% left 0 right 0, $width: 265px, $radius: .625rem, $padding: 1.25rem 1rem, $m-name: mx, $m-value: auto, $fs: 1.125rem, $a-color: $black !important, $a-padding: 0.25rem 0.625rem, $hover-bg: transparent, $hover-color: $red-700 !important);
+    @include property;
+    background: $white;
+  }
+
+  &:hover {
+    .sub-menu {
+      top: 100%;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+

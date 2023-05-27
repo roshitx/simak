@@ -1,0 +1,27 @@
+input,
+textarea {
+   @include form-input($ff: $inter, $fs: rem(16px), $color: $black-200, $bg: $white, $opacity: 1, $py: rem(12px), $px: rem(25px), $border-size: 2px, $border-color: $black-550, $radius-size: rem(6px), $focus: true, $f-color: $black);
+}
+
+.form-group {
+   position: relative;
+   max-width: rem(540px);
+   margin-top: rem(25px);
+
+   .btn-red {
+      height: rem(56px);
+      margin-top: rem(20px);
+
+      @include sm {
+         @include absolute(top 0 right 0);
+         margin-top: 0;
+      }
+   }
+}
+
+.comment-form{
+   input,
+   textarea {
+      @include form-input($color: #0C0D24, $opacity: 0.7, $border-color: $black-550, $py: 15px, $px: 20px, $focus: true);
+   }
+}

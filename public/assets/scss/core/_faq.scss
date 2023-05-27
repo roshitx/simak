@@ -1,0 +1,31 @@
+/*================================================
+FAQs CSS
+=================================================*/
+.faq-area {
+  padding-top: rem(70px);
+  padding-bottom: rem(70px);
+
+  @include lg {
+    padding-top: rem(140px);
+    padding-bottom: rem(125px);
+
+    &.pricing-faq {
+      padding-top: rem(70px);
+      padding-bottom: rem(140px);
+    }
+
+    &.help-center-faq {
+      padding-top: rem(130px);
+    }
+  }
+
+  .section-title-center {
+    padding-bottom: rem(72px);
+  }
+
+  .accordion-item {
+    .accordion-button {
+      border-radius: 10px;
+    }
+  }
+}

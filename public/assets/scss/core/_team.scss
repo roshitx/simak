@@ -1,0 +1,31 @@
+/*================================================
+Team CSS
+=================================================*/
+.team-item {
+  max-width: rem(255px);
+  border-radius: rem(30px);
+  background: $white;
+  padding: rem(35px);
+  margin-left: auto;
+  margin-right: auto;
+
+  .team-image {
+    @include size(rem(135px));
+    @include radius(all, 50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: rem(10px);
+  }
+
+  h4 {
+    font-size: rem(18px);
+    font-weight: 600;
+    margin-top: rem(35px);
+    margin-bottom: rem(10px);
+  }
+
+  p {
+    color: $black-200;
+    line-height: rem(22px);
+  }
+}

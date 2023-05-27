@@ -1,0 +1,15 @@
+/*--------------------------------------
+	- Button
+----------------------------------------*/
+.btn {
+  @include btn($fs: rem(18px), $fw: 500, $px: rem(32px), $py: rem(13px), $border: 2px solid $black, $radius: rem(6px));
+}
+
+.btn-white {
+  @include btn-color($white, $red-700, $h-bg: transparent);
+}
+
+.btn-red {
+  @include btn-color($red-700, $white, $black, $h-bg: $black, $h-color: $red-700, $h-border-color: $black);
+  box-shadow: none !important;
+}

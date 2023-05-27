@@ -1,0 +1,593 @@
+/*================================================
+Contact Page CSS
+=================================================*/
+.contact-banner-area {
+  background: linear-gradient(91.28deg, #FFFFFF 2.19%, #FFF6D6 97.81%);
+  height: rem(350px);
+
+  @include md {
+    height: rem(450px);
+  }
+
+  @include lg {
+    height: rem(560px);
+    padding-top: rem(225px);
+  }
+
+  .section-title-center {
+    padding-top: rem(60px);
+
+    @include lg {
+      padding-top: rem(30px);
+    }
+
+    @include xl {
+      padding-top: 0;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 99;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include md {
+        width: 70%;
+      }
+
+      @include xl {
+        font-size: rem(70px);
+        line-height: 1.1;
+        width: 75%;
+      }
+    }
+  }
+
+  :is(.shape13, .shape14, .shape15, .shape16) {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .shape13 {
+    top: 70%;
+    left: 0;
+    width: 15%;
+
+    @media only screen and (min-width: 425px) {
+      top: 61%;
+    }
+
+    @include md {
+      top: 48%;
+      left: 7%;
+      width: auto;
+    }
+
+    @include lg {
+      left: 12%;
+    }
+
+    @include xl {
+      left: 17%;
+      top: 55%;
+    }
+
+    @include xxl {
+      top: 48%;
+    }
+  }
+
+  .shape14 {
+    bottom: 30px;
+    left: 26px;
+    width: 80%;
+
+    @include md {
+      bottom: 70px;
+      left: 16%;
+      width: 62%;
+    }
+
+    @include lg {
+      bottom: 100px;
+      left: 18%;
+      width: 62%;
+    }
+
+    @include xl {
+      width: 47%;
+      bottom: 70px;
+      left: 22%;
+    }
+
+    @include xxl {
+      width: auto;
+      bottom: 70px;
+      left: 20%;
+    }
+  }
+
+  .shape15 {
+    bottom: 15%;
+    right: 0;
+    width: 15%;
+
+    @media only screen and (min-width: 425px) {
+      bottom: 18%;
+    }
+
+    @include md {
+      bottom: 26%;
+      right: 15%;
+      width: auto;
+    }
+
+    @include lg {
+      right: 16%;
+      bottom: 29%;
+    }
+
+    @include xl {
+      right: 27%;
+      bottom: 26%;
+    }
+
+    @include xxl {
+      bottom: 30%;
+    }
+  }
+
+  .shape16,
+  .pricing-shape-11 {
+    @include absolute(top 27% right 11%);
+    z-index: 2;
+    width: 6%;
+
+    @media only screen and (min-width: 425px) {
+      top: 26%;
+    }
+
+    @include md {
+      width: auto;
+      right: 8%;
+    }
+
+    @include lg {
+      // top: 18%;
+    }
+
+    @include xl {
+      top: 25%;
+      right: 10%;
+    }
+  }
+
+  .pricing-shape-11 {
+    top: 32%;
+    right: 9%;
+    z-index: 1;
+    width: 15%;
+
+    @include md {
+      top: 31%;
+      right: 6%;
+      width: auto;
+    }
+
+    @include lg {
+      right: 7%;
+    }
+
+    @include xl {
+      top: 29%;
+      right: 9%;
+    }
+  }
+}
+
+.contact-info {
+  max-width: rem(320px);
+  border-radius: rem(10px);
+  background-color: $white-800;
+  padding: rem(45px) rem(30px) rem(30px);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: rem(30px);
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h4 {
+    font-size: rem(22px);
+    margin-top: rem(15px);
+
+    a {
+      text-decoration: none;
+
+      @include hover {
+        text-decoration: underline;
+        color: $black;
+      }
+    }
+  }
+}
+
+.contact-form {
+  @include border($color: #F0F0F0);
+  @include radius(all, rem(15px));
+  @include margin(mt, rem(45px));
+  @include padding(all, rem(40px) rem(20px));
+
+  @include md {
+    @include padding(all, rem(70px) rem(90px) rem(75px));
+  }
+
+  .contact-form-select {
+    margin-bottom: rem(20px);
+  }
+
+  label {
+    margin-bottom: rem(10px);
+    font-size: rem(17px);
+  }
+
+  .select-topic {
+    width: 100%;
+    height: rem(56px);
+    padding: rem(7px) rem(25px);
+    font-size: rem(17px);
+    font-weight: 400;
+    color: #848D95;
+    border: 2px solid #F0F0F0;
+
+    .list {
+      width: 100%;
+    }
+
+    @include after {
+      @include size(6px);
+      right: rem(20px);
+    }
+
+    @include focus {
+      border: 2px solid #2C2C2C;
+      color: rgba($color: $black, $alpha: 0.7);
+    }
+  }
+
+  :is(.contact-form-name, .contact-form-email) {
+    padding-top: rem(20px);
+  }
+
+  input,
+  textarea {
+    border: 2px solid #F0F0F0;
+
+    @include focus {
+      border: 2px solid #2C2C2C;
+    }
+  }
+
+  textarea {
+    @include lg {
+      height: 393px;
+    }
+  }
+
+  .contact-form-button {
+    text-align: center;
+    margin-top: rem(60px);
+  }
+}
+
+.map {
+  position: relative;
+
+  .map-marking-item {
+    @include absolute(top 48px left 65px);
+
+    @include xsm {
+      top: 63px;
+      left: 81px;
+    }
+
+    @include sm {
+      top: 85px;
+      left: 102px;
+    }
+
+    @include md {
+      top: 120px;
+      left: 134px;
+    }
+
+    @include lg {
+      top: 166px;
+      left: 179px;
+    }
+
+    @include xl {
+      top: 200px;
+      left: 212px;
+    }
+
+    &:nth-child(3) {
+      @include absolute(top 20px left 65px);
+
+      @include xsm {
+        top: 27px;
+        left: 86px;
+      }
+
+      @include sm {
+        top: 39px;
+        left: 110px;
+      }
+
+      @include md {
+        top: 48px;
+        left: 118px;
+      }
+
+      @include lg {
+        top: 82px;
+        left: 193px;
+      }
+
+      @include xl {
+        top: 101px;
+        left: 229px;
+      }
+    }
+
+    &:nth-child(4) {
+      @include absolute(top 15px right 80px);
+      left: auto;
+
+      @include xsm {
+        top: 37px;
+        right: 117px;
+      }
+
+      @include sm {
+        top: 50px;
+        right: 152px;
+      }
+
+      @include md {
+        top: 74px;
+        right: 210px;
+      }
+
+      @include lg {
+        top: 104px;
+        right: 289px;
+      }
+
+      @include xl {
+        top: 129px;
+        right: 347px;
+      }
+    }
+
+    &:nth-child(5) {
+      @include absolute(top 53px right 80px);
+      left: auto;
+
+      @include xsm {
+        top: 75px;
+        right: 110px;
+      }
+
+      @include sm {
+        top: 102px;
+        right: 146px;
+      }
+
+      @include md {
+        top: 142px;
+        right: 200px;
+      }
+
+      @include lg {
+        top: 200px;
+        right: 275px;
+      }
+
+      @include xl {
+        top: 243px;
+        right: 330px;
+      }
+
+    }
+
+    &:nth-child(6) {
+      @include absolute(top 43px right 53px);
+      left: auto;
+
+      @include xsm {
+        top: 65px;
+        right: 78px;
+      }
+
+      @include sm {
+        top: 87px;
+        right: 104px;
+      }
+
+      @include md {
+        top: 124px;
+        right: 145px;
+      }
+
+      @include lg {
+        top: 171px;
+        right: 201px;
+      }
+
+      @include xl {
+        top: 208px;
+        right: 243px;
+      }
+    }
+
+    &:nth-child(7) {
+      @include absolute(right 29px bottom 38px);
+      top: auto;
+      left: auto;
+
+      @include xsm {
+        right: 40px;
+        bottom: 49px;
+      }
+
+      @include sm {
+        right: 57px;
+        bottom: 61px;
+      }
+
+      @include md {
+        right: 83px;
+        bottom: 77px;
+      }
+
+      @include lg {
+        right: 118px;
+        bottom: 102px;
+      }
+
+      @include xl {
+        right: 142px;
+        bottom: 120px;
+      }
+    }
+
+    &:nth-child(8) {
+      @include absolute(top 65px right 120px);
+      left: auto;
+
+      @include xsm {
+        top: 96px;
+        right: 166px;
+      }
+
+      @include sm {
+        top: 129px;
+        right: 220px;
+      }
+
+      @include md {
+        top: 178px;
+        right: 302px;
+      }
+
+      @include lg {
+        top: 245px;
+        right: 414px;
+      }
+
+      @include xl {
+        top: 293px;
+        right: 492px;
+      }
+    }
+  }
+
+  .map-marking-point {
+    position: relative;
+    max-width: 173px;
+
+    .marking-point {
+      @include size(7px);
+      @include radius(all, 50%);
+      @include relative(left 50% bottom -20px);
+      background-color: $red-700;
+      transform: translateX(-50%);
+      z-index: 9;
+      cursor: pointer;
+
+      @include before-after {
+        @include absolute(top 0 left 0);
+        background-color: $red-700;
+        border-radius: 50%;
+        @include property;
+      }
+
+      @include before {
+        @include size(12px);
+        opacity: 0.5;
+        top: -2px;
+        left: -2px;
+        z-index: 5;
+        animation: pulse-animation 2.2s infinite;
+      }
+
+      @include after {
+        @include size(17px);
+        opacity: 0.3;
+        top: -5px;
+        left: -5px;
+        z-index: 1;
+        animation: pulse-animation 2s infinite;
+      }
+
+      @include hover {
+        @include before-after {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+.tippy-box[data-theme~='tooltip'] {
+  font-size: 12px;
+  color: #5D5D66;
+  max-width: 173px;
+  border-radius: rem(10px);
+  background-color: $white;
+  top: -10px;
+
+  @include pseudo(bottom -12px left 50%) {
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 0 12px;
+    border-color: #ffffff transparent transparent transparent;
+  }
+
+  .address-info {
+    margin-left: rem(10px) !important;
+
+    h6 {
+      font-family: $inter;
+      font-size: rem(14px);
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: 12px;
+      color: $black-550;
+      display: block;
+    }
+  }
+}
+
+.tippy-box[data-theme~='tooltip'][data-placement^='top']>.tippy-arrow::before {
+  border-top-color: #ffffff;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(236, 89, 90, 1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 12px rgba(236, 89, 90, 0);
+  }
+}

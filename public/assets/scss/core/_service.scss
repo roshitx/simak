@@ -1,0 +1,50 @@
+/*================================================
+Service CSS
+=================================================*/
+.service-area {
+  &.section-padding {
+    padding-bottom: rem(70px);
+
+    @include lg {
+      padding-bottom: rem(135px);
+    }
+  }
+}
+
+.service-item {
+  text-align: center;
+  margin-top: rem(30px);
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include sm {
+    text-align: left;
+
+    img {
+      margin-left: 0;
+    }
+
+  }
+
+  @include xl {
+    padding-right: rem(30px);
+  }
+
+  .service-icon {
+    margin-bottom: rem(20px);
+  }
+
+  h4 {
+    font-size: rem(18px);
+    font-weight: 600;
+    margin-bottom: rem(10px);
+
+  }
+
+  p {
+    line-height: rem(27px);
+  }
+}

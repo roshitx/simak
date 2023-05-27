@@ -1,0 +1,19 @@
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixel you want to convert
+ *
+ * e.g. p font-size: fs-rem(12px);
+ * e.g. p {@include fontSize(12px);}
+ *
+ */
+
+// Function for converting a px based font-size to rem.
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}
+
+// Font Responsive
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

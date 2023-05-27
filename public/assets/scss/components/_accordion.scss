@@ -1,0 +1,63 @@
+// Accordion Component
+.accordion-item {
+  border: none;
+  margin-top: rem(15px);
+  max-width: 750px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .accordion-button {
+    padding: rem(27px);
+    @include radius(all, 10px);
+    background: $white;
+    font-family: $poppins;
+    font-size: rem(16px);
+    font-weight: 600;
+    color: $black;
+    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.06);
+    border: none;
+
+    @include md {
+      font-size: rem(22px);
+    }
+
+    &.collapsed {
+      background: $white-800;
+      font-weight: 400;
+      box-shadow: none;
+      font-family: $inter;
+    }
+
+    @include focus {
+      border-color: transparent;
+    }
+
+    &:not(.collapsed){
+      &::after {
+        content: '\f068';
+        transform: rotate(0deg);
+        color: $black;
+      }
+    }
+
+    &::after {
+      content: '\f067';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      background: none;
+      font-size: 18px;
+      color: #BBC0C4;
+    }
+
+    span {
+      margin-right: rem(15px);
+    }
+  }
+
+  .accordion-body {
+    padding: rem(30px) 0;
+    line-height: rem(28px);
+  }
+}
+

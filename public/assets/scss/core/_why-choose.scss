@@ -1,0 +1,35 @@
+/*================================================
+Why-choose CSS
+=================================================*/
+.why-choose {
+  &-wrapper {
+    background: $white-800;
+    @include radius(null, rem(27px));
+    @include padding(p, rem(40px) rem(20px));
+
+    @include lg {
+      @include padding(p, rem(70px) rem(80px));
+    }
+  }
+  &-icon{
+    margin-bottom: rem(30px);
+  }
+  &-item {
+    padding-top: rem(30px);
+
+    @include lg {
+      padding-top: 0;
+    }
+
+    @include xl {
+      padding-right: rem(50px);
+    }
+
+    h4 {
+      font-weight: 600;
+      margin-bottom: rem(15px);
+    }
+    p{}
+  }
+
+}

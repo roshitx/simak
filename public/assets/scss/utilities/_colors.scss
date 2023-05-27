@@ -1,0 +1,76 @@
+/*--------------------------------------
+	- Color
+----------------------------------------*/
+.color {
+  color: $global-color;
+}
+
+@include color(black, $black);
+@include color(white, $white);
+@include color(white-800, $white-800);
+@include color(white-600, $white-600);
+@include color(red, $red-700);
+@include color(red-150, $red-150);
+@include color(gray-100, $gray-100);
+@include color(yellow-200, $yellow-200);
+
+
+//@include gradient-color(yellow-gr, 146deg, $yellow-gr);
+
+
+//.bg-fb{
+//  background: $fb !important;
+//}
+//
+//.bg-tw{
+//  background: $tw !important;
+//}
+//
+//.bg-yt{
+//  background: $yt !important;
+//}
+//
+//.bg-in{
+//  background: $in !important;
+//}
+
+// Brand Background Color
+//.fb-bg {
+//	color: $white;
+//	background: $fb;
+//}
+//
+//.tw-bg {
+//	color: $white;
+//	background: $twitter;
+//}
+//
+//.yt-bg {
+//	color: $white;
+//	background: $youtube;
+//}
+//
+//.in-bg {
+//	color: $white;
+//	background: #FD6533;
+//}
+//
+//.pin-bg {
+//	color: $white;
+//	background: $pin;
+//}
+//
+//.g-bg {
+//	color: $white;
+//	background: #FD6533;
+//}
+//
+//.insta-bg {
+//	color: $white;
+//	background: $insta;
+//}
+//
+//.snap-bg {
+//	color: $white;
+//	background: $snapchat;
+//}

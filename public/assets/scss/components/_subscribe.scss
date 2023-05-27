@@ -1,0 +1,61 @@
+.subscribe-form{
+  display: inline-block;
+  margin-top: 40px;
+  form{
+    position: relative;
+    input{
+      @include radius($size: 40px);
+      background: $white;
+      border: none; 
+      padding: 20px 30px;
+      width: 100%;
+      box-shadow: 14px 14px 39px 0px rgba(186, 184, 191, 0.56);
+      @include lg {
+        padding: 40px;
+        width: 600px;
+        height: 80px;
+      }
+    }
+    button{
+      border: none; 
+      margin-top: 25px;
+      @include lg {
+        @include absolute(top 9px right 12px);
+        margin-top: 0;  
+      }
+    }
+  }
+}
+
+.subscribe-form-two{
+  @include xl {
+    margin-left: 100px;
+  }
+
+  span {
+    font-size: 22px;
+    padding-bottom: 15px;
+    display: block;
+  }
+
+  form {
+    input {
+      max-width: 370px;
+      @include border($color: #EAEAEA);
+      box-shadow: none;
+      font-size: 18px;
+      border-radius: 0;
+      position: relative;
+      @include property;
+
+      @include focus {
+        @include border($color: $black);
+      }
+    }
+
+    i{
+      @include absolute(top 30px right 30px);
+      font-size: 20px;
+    }
+  }
+}

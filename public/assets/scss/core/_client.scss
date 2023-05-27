@@ -1,0 +1,116 @@
+/*================================================
+Client CSS
+=================================================*/
+.client-area {
+  position: relative;
+  z-index: 99;
+
+  @include lg {
+    margin-top: rem(-100px);
+  }
+
+  .col {
+    flex: 1 0 0;
+  }
+}
+
+.client-wrapper {
+  box-shadow: 0 rem(20px) rem(50px) rgba(0, 0, 0, 0.05);
+  border-radius: rem(30px);
+  padding: rem(40px) rem(20px);
+  background: $white;
+
+  @include md {
+    padding: rem(75px) rem(60px) rem(75px);
+  }
+}
+
+.client-image {
+  padding: 30px 15px;
+
+  img {
+    @include margin(mx, auto);
+  }
+}
+
+.client-text {
+  padding-bottom: rem(48px);
+  text-align: center;
+
+  h4 {
+    font-size: rem(20px);
+    font-weight: 400;
+    line-height: rem(30px);
+
+    span {
+      font-size: rem(22px);
+      font-weight: 600;
+    }
+
+    @include lg {
+      max-width: 55%;
+      @include margin(mx, auto);
+    }
+  }
+}
+
+.client-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: $black;
+  margin-top: rem(45px);
+
+  .client-review {
+    font-size: rem(22px);
+    margin-left: rem(14px);
+
+    span {
+      font-weight: 600;
+    }
+
+    &-number {
+      font-size: rem(22px);
+      margin-left: rem(14px);
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &-icon {
+      margin-left: rem(14px);
+
+      li {
+        display: inline-block;
+        color: #EFBA34;
+        font-size: rem(18px);
+      }
+    }
+  }
+}
+
+.client-area-two {
+  margin-top: 0;
+  @include padding(py, 70px);
+
+  @include lg {
+    @include padding(py, 140px);
+  }
+
+  .client-wrapper {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .client-image {
+    img {
+      filter: grayscale(1);
+
+      @include hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+/*----------------------------------------*/
+/*  About Page CSS
+/*----------------------------------------*/
+.about-banner {
+  padding-bottom: rem(70px);
+
+  @include lg {
+    padding-top: rem(200px);
+    padding-bottom: rem(200px);
+  }
+
+  @include xl {
+    height: 742px;
+  }
+
+  .section-title-left {
+    h2 {
+      @include lg {
+        padding-right: rem(25px);
+      }
+    }
+  }
+}
+
+.our-story-area {
+  padding-top: rem(60px);
+  padding-bottom: rem(40px);
+
+  h2 {
+    margin-bottom: rem(40px);
+    font-weight: 700;
+  }
+}
+
+.our-story {
+  margin-bottom: rem(48px);
+
+  p {
+    font-size: rem(15px);
+    line-height: rem(27px);
+
+    @include md {
+      padding-right: rem(60px);
+    }
+
+    +p {
+      margin-top: rem(40px);
+    }
+  }
+}
+
+.story-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  column-gap: rem(50px);
+  row-gap: rem(20px);
+
+  @include sm {
+    flex-direction: row;
+  }
+
+  &+& {
+    padding-top: rem(24px);
+
+    @include sm {
+      padding-top: rem(60px);
+
+      .story-info-meta {
+        @include pseudo(bottom 112% left 7px, after) {
+          @include size(2px, 100px);
+          background: #BBC0C4;
+        }
+      }
+    }
+  }
+
+  .story-info-meta {
+    position: relative;
+    padding-left: rem(30px);
+
+    @include pseudo(top 3px left 0) {
+      @include size(rem(15px));
+      border-radius: 50%;
+      background: $red-700;
+    }
+
+    h5 {
+      font-size: rem(15px);
+      font-family: $inter;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    span {
+      color: $red-700;
+      display: block;
+    }
+  }
+
+  p {
+    flex: 1;
+    font-size: rem(15px);
+    line-height: rem(27px);
+  }
+}

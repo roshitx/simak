@@ -1,0 +1,19 @@
+// Accordion Tabs Component
+.nav {
+  .nav-link {
+    font-family: $poppins;
+    font-weight: 500;
+    color: $black-350;
+    padding: rem(10px) rem(8px);
+
+    &.active {
+      color: $black;
+      font-weight: 600;
+    }
+
+    @include md {
+      font-size: rem(22px);
+      padding: rem(10px) rem(30px);
+    }
+  }
+}

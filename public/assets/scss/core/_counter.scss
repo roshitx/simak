@@ -1,0 +1,39 @@
+/*================================================
+Counter CSS
+=================================================*/
+.counter-area {
+  padding-top: rem(18px);
+  padding-bottom: rem(50px);
+
+  @include lg {
+    padding-top: rem(120px);
+    padding-bottom: rem(70px);
+  }
+}
+
+.counter-item {
+  span {
+    font-size: rem(15px);
+    display: block;
+    font-family: $poppins;
+  }
+
+  h2 {
+    font-weight: 700;
+  }
+
+  .counter-number {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: rem(24px);
+      font-weight: 700;
+      color: $black;
+
+      @include sm {
+        font-size: rem(50px);
+      }
+    }
+  }
+}
