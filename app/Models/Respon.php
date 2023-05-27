@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Choice extends Model
+class Respon extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function question()
+    public function kuesioner()
     {
-        return $this->belongsTo(Question::class);
+        return $this->belongsTo(Kuesioner::class);
     }
 }

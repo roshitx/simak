@@ -49,10 +49,10 @@
                 </li>
                 <li class="nav-item">
                     <a href="#"
-                        class="nav-link {{ Request::is('client/kuesioner*') ? 'active' : '' }}">
+                        class="nav-link {{ Request::is('client*') ? 'active' : '' }}">
                         <i class="fa-solid fa-database nav-icon"></i>
                         <p>
-                            Data Kuesioner
+                            Master Data
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -65,7 +65,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{-- {{ route('all.statistic') }} --}}" 
+                            <a href="{{ route('all.statistic') }}" 
                             class="nav-link {{ Request::is('client/statistic*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Statistic</p>
@@ -77,7 +77,7 @@
                 @if (Auth::user()->role === 'Admin')
                     <li class="nav-item">
                         <a href="#"
-                            class="nav-link {{ Request::is('administrator/users*') ? 'active' : '' }}">
+                            class="nav-link {{ Request::is('administrator*') ? 'active' : '' }}">
                             <i class="fa-solid fa-user-lock nav-icon"></i>
                             <p>
                                 Administrator
@@ -93,13 +93,22 @@
                                 </a>
                             </li>
                         </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('all.kuesioner') }}"
+                                    class="nav-link {{ Request::is('administrator/kuesioner*') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Kuesioner</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 @endif
                 <hr class="bg-white">
                 <li class="nav-item">
                     <a href="{{-- {{ route('home.page') }} --}}" class="nav-link">
                         <i class="nav-icon fa-solid fa-arrow-left"></i>
-                        <p>Kembali ke home</p>
+                        <p>Back to home</p>
                     </a>
                 </li>
                 <li class="nav-item">

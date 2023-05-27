@@ -6,7 +6,7 @@
                 <div class="col-md-8 mx-auto">
                     <div class="card card-warning card-outline">
                         <div class="card-body">
-                            <h1 class="mb-3 fw-bold"><i class="fa-solid fa-pen-to-square"></i> Edit Kuesioner</h1>
+                            <h1 class="mb-3 fw-bold"><i class="fa-solid fa-pen-to-square"></i> Edit Questionnaire</h1>
                             <div class="col-lg-12">
                                 <hr>
                                 <form action="{{ route('kuesioner.update', [$kuesioner->id]) }}" method="POST">

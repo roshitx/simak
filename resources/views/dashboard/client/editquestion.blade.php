@@ -4,10 +4,10 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row">
-                    <p class="text-uppercase"><i class="fa-solid fa-pen-to-square"></i> Mengedit pertanyaan dari kuesioner :</p>
+                    <p class="text-uppercase"><i class="fa-solid fa-pen-to-square"></i> Editing question from kuesioner :</p>
                     <div class="d-flex justify-content-between mb-3">
                         <h1 class="fw-bold">{{ $kuesioner->title }}</h1>
-                        <a href="{{ route('kuesioner.show', [$kuesioner->id]) }}" class="btn btn-secondary block"><i class="fa-sharp fa-solid fa-rotate-left"></i> Kembali</a>
+                        <a href="{{ route('kuesioner.show', [$kuesioner->id]) }}" class="btn btn-secondary block"><i class="fa-sharp fa-solid fa-rotate-left"></i> Back</a>
                     </div>
                     <hr>
                     @if (session('success'))
@@ -43,7 +43,7 @@
                             <div class="col-md-6">
                                 <div class="card card-warning card-outline">
                                     <div class="card-header">
-                                        <h4 class="m-0">{{ $question->question }}</h4>
+                                        <h4 class="m-0">{{ $loop->iteration }}. {{ $question->question }}</h4>
                                     </div>
                                     <div class="card-body">
                                         <form action="{{ route('question.update', [$question->id]) }}" method="POST">
@@ -63,23 +63,10 @@
                                             </div>
                                             {{-- Buatkan disini --}}
 
-                                            <div class="mb-3">
-                                                <label for="index" class="form-label">Urutan Pertanyaan: <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="number" value="{{ old('index', $question->index) }}"
-                                                    name="index" class="form-control @error('index') is-invalid @enderror"
-                                                    id="index" required autofocus>
-                                                @error('index')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-
                                             <div class="d-flex justify-content-end">
                                                 <button type="submit" class="btn btn-primary"><i
                                                         class="fa-solid fa-floppy-disk"></i>
-                                                    Simpan</button>
+                                                    Save</button>
                                             </div>
                                         </form>
                                     </div>

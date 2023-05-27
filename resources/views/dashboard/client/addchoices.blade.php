@@ -8,11 +8,11 @@
                         <div class="card-header">
                             <div class="info d-flex justify-content-between">
                                 <div class="title">
-                                    <p class="text-uppercase text-secondary">Tambah opsi di:</p>
-                                    <h1 class="m-0 text-uppercase fw-bold">{{ $question->index }}. {{ $question->question }}</h1>
+                                    <p class="text-uppercase text-secondary">Add choices in:</p>
+                                    <h1 class="m-0 text-uppercase fw-bold">{{ $question->question }}</h1>
                                 </div>
                                 <a href="{{ route('kuesioner.show', ['kuesioner' => $question->kuesioner_id]) }}"
-                                    class="btn btn-secondary align-self-start"><i class="fa-sharp fa-solid fa-rotate-left"></i> Kembali</a>
+                                    class="btn btn-secondary align-self-start"><i class="fa-sharp fa-solid fa-rotate-left"></i> Back</a>
                             </div>
                         </div>                        
 
@@ -48,7 +48,7 @@
                                         <button id="addOption" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button id="submit" type="submit" class="btn btn-success mt-3"><i class="fa-solid fa-floppy-disk"></i> Simpan</button>
+                                        <button id="submit" type="submit" class="btn btn-success mt-3"><i class="fa-solid fa-floppy-disk"></i> Save</button>
                                     </div>
                                 </form>
                             </div>

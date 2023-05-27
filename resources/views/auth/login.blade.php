@@ -4,8 +4,7 @@
 <div class="container">
     <div class="row justify-content-center vh-100">
         <div class="col-md-8">
-
-            <div class="card mb-3 mt-5">
+            <div class="card mb-3 mt-5 shadow-lg">
                 <div class="card-body">
                     <div class="row d-flex align-items-center">
                         <div class="col-5 text-end">
@@ -20,8 +19,10 @@
             </div>
             
 
-            <div class="card">
-                <div class="card-header"><h2 class="mb-0 fw-bold">Login</h2></div>
+            <div class="card shadow-lg">
+                <div class="card-header">
+                    <h2 class="mb-0 fw-bold text-center">Login</h2>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -65,7 +66,7 @@
 
                         <div class="row mb-0">
                             <div class="col d-flex justify-content-center">
-                                <p>Ingin membuat akun baru?<a href="{{ route('register') }}"> Registrasi disini!</a></p>
+                                <p>Wan't to create new account?<a href="{{ route('register') }}"> Register here!</a></p>
                             </div>
                         </div>
                     </form>

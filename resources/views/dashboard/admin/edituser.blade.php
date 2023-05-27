@@ -15,7 +15,7 @@
                                         @csrf
                                         @method('PUT')
                                         <div class="mb-3">
-                                            <label for="fullname" class="form-label">Nama Lengkap: <span
+                                            <label for="fullname" class="form-label">Fullname: <span
                                                     class="text-danger">*</span></label>
                                             <input type="text" name="fullname"
                                                 class="form-control @error('fullname')
@@ -45,7 +45,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Alamat email: <span
+                                            <label for="email" class="form-label">Email Address: <span
                                                     class="text-danger">*</span></label>
                                             <input type="email" name="email"
                                                 class="form-control @error('email')
@@ -61,7 +61,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="birth" class="form-label">Tanggal Lahir:</label>
+                                            <label for="birth" class="form-label">Birth:</label>
                                             <input type="date" name="birth"
                                                 class="form-control @error('birth')
                                                 is-invalid
@@ -75,7 +75,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="gender" class="form-label">Jenis Kelamin: <span
+                                            <label for="gender" class="form-label">Gender: <span
                                                     class="text-danger">*</span></label>
                                             <select class="form-select" name="gender" id="gender">
                                                 <option>-- Select Gender --</option>
@@ -106,9 +106,9 @@
 
                                         <div class="d-flex justify-content-between">
                                             <a href="{{ route('users.index') }}" class="btn btn-secondary"><i
-                                                    class="fa-sharp fa-solid fa-rotate-left"></i> Kembali</a>
+                                                    class="fa-sharp fa-solid fa-rotate-left"></i> Back</a>
                                             <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i>
-                                                Buat</button>
+                                                Create</button>
                                         </div>
                                     </form>
                                 </div>

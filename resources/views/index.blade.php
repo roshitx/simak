@@ -26,7 +26,7 @@
                                     <li><a href="{{ route('register') }}"><strong>Register</strong></a></li>
                                 @endguest
                                 @auth
-                                    <li><a href="{{ route('dashboard') }}">DASHBOARD</a></li>
+                                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                                     <li><a href="{{ route('logouts') }}">Logout</a></li>
                                 @endauth
                             </ul>
@@ -43,11 +43,11 @@
         <div class="container">
             <div class="cs-hero__text wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.3s">
                 <h1 class="cs-hero__title">Sistem Manajemen <br>Kuesioner</h1>
-                <div class="cs-hero__subtitle">Buat kuesioner mu disini! Mudah, Instan dan Efektif.
-                    <br><strong>Daftar sekarang!</strong></div>
+                <div class="cs-hero__subtitle">Create your questionnaire here! Easy, Instant, and Effective.
+                    <br><strong>Register Now!</strong></div>
                 <div class="cs-btns cs-style1">
                     <a href="{{ route('dashboard') }}" class="cs-btn cs-style1 cs-color1 cs-primary__font">
-                        <span class="cs-btn__text">Mulai</span>
+                        <span class="cs-btn__text">Start</span>
                     </a>
                 </div>
             </div>

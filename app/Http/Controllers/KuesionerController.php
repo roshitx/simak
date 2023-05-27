@@ -14,6 +14,7 @@ class KuesionerController extends Controller
      */
     public function index()
     {   
+        
         $user = auth()->user();
         return view('dashboard.client.allkuesioner', [
             'kuesioners' => Kuesioner::where('user_id', $user->id)->get(),
@@ -45,9 +46,9 @@ class KuesionerController extends Controller
             // dd($validatedData);
             Kuesioner::create($validatedData);
 
-            return redirect()->route('kuesioner.index')->with('success', 'Berhasil membuat kuesioner baru');
+            return redirect()->route('kuesioner.index')->with('success', 'Successfully create a new questionnaire');
         } catch (Exception $e) {
-            return redirect()->route('kuesioner.create')->with('error', 'Terjadi kesalahan saat membuat kuesioner. Coba lagi');
+            return redirect()->route('kuesioner.create')->with('error', 'Error while creating questionnaire. Please try again');
         }
     }
 
@@ -93,9 +94,9 @@ class KuesionerController extends Controller
         
             $kuesioner->update($validatedData);
         
-            return redirect()->route('kuesioner.index')->with('success', 'Berhasil memperbarui kuesioner!');
+            return redirect()->route('kuesioner.index')->with('success', 'Successfully updated a questionnaire');
         } catch (Exception $e) {
-            return redirect()->route('kuesioner.index')->with('error', 'Error ketika mengedit kuesioner. Coba lagi');
+            return redirect()->route('kuesioner.index')->with('error', 'Error while updating a questionnaire. Please try again');
         }
     }
 
@@ -108,9 +109,9 @@ class KuesionerController extends Controller
     
         if ($kuesioner->user_id == auth()->user()->id) {
             $kuesioner->delete();
-            return redirect()->route('kuesioner.index')->with('success', 'Kuesioner  berhasil dihapus');
+            return redirect()->route('kuesioner.index')->with('success', 'The questionnaire has been successfully deleted.');
         } else {
-            return redirect()->route('kuesioner.index')->with('error', 'Anda gagal menghapus kuesioner');
+            return redirect()->route('kuesioner.index')->with('error', 'Failed to delete the questionnaire.');
         }
     }
 
@@ -123,6 +124,6 @@ class KuesionerController extends Controller
         $kuesioner->link = $link;
         $kuesioner->save();
 
-        return redirect()->back()->with('success', 'Link baru telah berhasil di-generate.');
+        return redirect()->back()->with('success', 'A new link has been successfully generated.');
     }
 }

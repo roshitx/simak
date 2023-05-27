@@ -7,7 +7,7 @@
                     <div class="col">
                         <div class="card card-success card-outline">
                             <div class="card-header">
-                                <h1 class="fw-bold text-uppercase mb-3">Manage Questionnaire</h1>
+                                <h1 class="fw-bold text-uppercase mb-3">All Questionnaire</h1>
                                 @if (session('success'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         <i class="bi bi-check-circle-fill"></i> {{ session('success') }}
@@ -36,18 +36,6 @@
                                         });
                                     </script>
                                 @endif
-                                <a class="btn btn-success mb-3" href="{{ route('kuesioner.create') }}" role="button"><i
-                                        class="fa-solid fa-plus"></i>
-                                    Create Questionnaire</a>
-                                @unless ($kuesioners->isEmpty())
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-info-circle-fill me-2"></i>
-                                        <small>
-                                            To create a question, click the <span class="badge bg-info"><i
-                                                    class="fa-solid fa-eye"></i></span> button.
-                                        </small>
-                                    </div>
-                                @endunless
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -55,62 +43,32 @@
                                         <thead>
                                             <tr class="bg-dark">
                                                 <th scope="col">No</th>
+                                                <th scope="col">Owner</th>
                                                 <th scope="col">Title</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Link</th>
+                                                <th scope="col">Created At</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @if ($kuesioners->isEmpty())
                                                 <tr>
-                                                    <td colspan="5" class="text-center">You don't have a questionnaire
-                                                        yet. Create one now!</td>
+                                                    <td colspan="5" class="text-center">No questionnaire in this table</td>
                                                 </tr>
                                             @else
                                                 @foreach ($kuesioners as $kuesioner)
                                                     <tr>
                                                         <th scope="row">{{ $loop->iteration }}</th>
+                                                        <td>{{ $kuesioner->user->username }}</td>
                                                         <td>{{ $kuesioner->title }}</td>
-                                                        <td>{{ Str::limit($kuesioner->description, 50) }}</td>
-                                                        <td>
-                                                            {{-- Copy to Clipboard --}}
-                                                            <div class="d-flex btn-group align-items-center">
-                                                                <input id="link{{ $kuesioner->id }}" class="form-control"
-                                                                    value="{{ url('/kuesioner/' . $kuesioner->link) }}"
-                                                                    readonly>
-                                                                <button class="btn bg-secondary btn-clipboard"
-                                                                    data-clipboard-target="#link{{ $kuesioner->id }}"
-                                                                    data-bs-toggle="tooltip"
-                                                                    data-kuesioner-id="{{ $kuesioner->id }}"
-                                                                    title="Copy to Clipboard">
-                                                                    <i class="bi bi-clipboard" id="iconClipboard"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
+                                                        <td>{{ $kuesioner->created_at->format('D M Y') }}</td>
                                                         <td>
                                                             <div class="btn-group">
-                                                                <a href="{{ route('kuesioner.show', $kuesioner->id) }}"
-                                                                    class="btn btn-info text-white mb-2"
-                                                                    data-bs-toggle="tooltip" title="Detail Questionnaire">
-                                                                    <i class="fa-solid fa-eye"></i>
-                                                                </a>
-                                                                <a href="{{ route('kuesioner.edit', $kuesioner->id) }}"
-                                                                    class="btn btn-warning text-white mb-2"
-                                                                    data-bs-toggle="tooltip" title="Edit Questionnaire">
-                                                                    <i class="fa-solid fa-pen-to-square"></i>
-                                                                </a>
                                                                 <button type="button" data-bs-toggle="modal"
                                                                     data-bs-target="#deleteKuesioner{{ $kuesioner->id }}"
                                                                     class="btn btn-danger mb-2">
-                                                                    <i class="fa-solid fa-trash"></i>
+                                                                    <i class="fa-solid fa-trash"></i> Delete
                                                                 </button>
                                                             </div>
-                                                            <a href="{{ route('generate.link', $kuesioner->id) }}"
-                                                                class="btn btn-sm btn-primary text-white mb-2"
-                                                                data-bs-toggle="tooltip" title="Generate new link">
-                                                                <i class="fa-solid fa-link"></i> Generate link
-                                                            </a>
                                                         </td>
                                                     </tr>
                                                     <!-- Modal Delete Survey -->

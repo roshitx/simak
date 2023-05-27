@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <div class="card mb-3 mt-5">
+            <div class="card mb-3 mt-1 shadow-lg">
                 <div class="card-body">
                     <div class="row d-flex align-items-center">
                         <div class="col-5 text-end">
@@ -19,15 +19,17 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card shadow-lg mb-3">
+                <div class="card-header">
+                    <h2 class="mb-0 fw-bold text-center">Register</h2>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="fullname" class="col-md-4 col-form-label text-md-end">{{ __('Nama Lengkap') }}<span class="text-danger"> *</span></label>
+                            <label for="fullname" class="col-md-4 col-form-label text-md-end">{{ __('Fullname') }}<span class="text-danger"> *</span></label>
 
                             <div class="col-md-6">
                                 <input id="fullname" type="text" class="form-control @error('name') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
@@ -55,7 +57,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Alamat Email') }}<span class="text-danger"> *</span></label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}<span class="text-danger"> *</span></label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -69,11 +71,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Jenis Kelamin') }}<span class="text-danger"> *</span></label>
+                            <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}<span class="text-danger"> *</span></label>
 
                             <div class="col-md-6">
                                 <select class="form-select" name="gender" id="gender">
-                                    <option>-- Jenis Kelamin --</option>
                                     <option value="Male" {{ old('gender') === 'Male' ? 'selected' : '' }}>Male
                                     </option>
                                     <option value="Female" {{ old('gender') === 'Female' ? 'selected' : '' }}>Female
@@ -85,7 +86,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="birth" class="col-md-4 col-form-label text-md-end">{{ __('Tanggal Lahir') }}<span class="text-danger"> *</span></label>
+                            <label for="birth" class="col-md-4 col-form-label text-md-end">{{ __('Birth') }}<span class="text-danger"> *</span></label>
 
                             <div class="col-md-6">
                                 <input type="date" name="birth"
@@ -116,7 +117,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Konfirmasi Password') }}<span class="text-danger"> *</span></label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}<span class="text-danger"> *</span></label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -133,7 +134,7 @@
 
                         <div class="row mb-0">
                             <div class="col d-flex justify-content-center">
-                                <p>Sudah mempunyai akun?<a href="{{ route('login') }}"> Login disini!</a></p>
+                                <p>Already have an account?<a href="{{ route('login') }}"> Pls login</a></p>
                             </div>
                         </div>
                     </form>

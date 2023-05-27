@@ -6,7 +6,7 @@
                 <div class="col-md-8 mx-auto">
                     <div class="card card-outline card-warning">
                         <div class="card-header">
-                            <h1 class="m-0 text-uppercase fw-bold">Tambah User</h1>
+                            <h1 class="m-0 text-uppercase fw-bold">Add User</h1>
                         </div>
                         <div class="card-body">
                             <div class="col-12">
@@ -14,7 +14,7 @@
                                     @csrf
 
                                     <div class="mb-3">
-                                        <label for="fullname" class="form-label">Nama Lengkap: <span
+                                        <label for="fullname" class="form-label">Fullname: <span
                                                 class="text-danger">*</span></label>
                                         <input type="text" name="fullname"
                                             class="form-control @error('fullname')
@@ -44,7 +44,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="email" class="form-label">Alamat email: <span
+                                        <label for="email" class="form-label">Email Address: <span
                                                 class="text-danger">*</span></label>
                                         <input type="email" name="email"
                                             class="form-control @error('email')
@@ -73,7 +73,7 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="birth" class="form-label">Tanggal Lahir:</label>
+                                        <label for="birth" class="form-label">Birth:</label>
                                         <input type="date" name="birth"
                                             class="form-control @error('birth')
 											is-invalid
@@ -86,7 +86,7 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="gender" class="form-label">Jenis Kelamin: <span
+                                        <label for="gender" class="form-label">Gender: <span
                                                 class="text-danger">*</span></label>
                                         <select class="form-select" name="gender" id="gender">
                                             <option>-- Select Gender --</option>

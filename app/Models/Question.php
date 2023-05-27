@@ -9,12 +9,7 @@ class Question extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'index',
-        'question',
-        'type',
-        'kuesioner_id',
-    ];
+    protected $guarded = [];
 
     public function question()
     {
@@ -24,5 +19,10 @@ class Question extends Model
     public function choices()
     {
         return $this->hasMany(Choice::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
     }
 }

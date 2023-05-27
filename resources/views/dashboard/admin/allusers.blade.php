@@ -7,7 +7,7 @@
                     <div class="col">
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <h1 class="fw-bold mb-3">SEMUA USERS</h1>
+                                <h1 class="fw-bold mb-3">ALL USERS</h1>
                                 {{-- MESSAGE --}}
                                 @if (session('success'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -40,7 +40,7 @@
                                 {{-- MESSAGE END --}}
                                 <a class="btn btn-success mb-3" href="{{ route('users.create') }}" role="button"><i
                                         class="bi bi-person-fill-add"></i>
-                                    Tambah User</a>
+                                    Add User</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -50,7 +50,7 @@
                                                 <th scope="col">No</th>
                                                 <th scope="col">Username</th>
                                                 <th scope="col">Email</th>
-                                                <th scope="col">Jenkel</th>
+                                                <th scope="col">Gender</th>
                                                 <th scope="col">Role</th>
                                                 <th scope="col">Action</th>
                                             </tr>
@@ -89,19 +89,18 @@
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Apakah anda yakin ingin menghapus user ini? <br>
-                                                                <small class="text-danger">*user yang sudah terhapus, tidak bisa dikembalikan kembali</small>
+                                                                Are you sure want to delete this user? <br>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
-                                                                    data-bs-dismiss="modal">Kembali</button>
+                                                                    data-bs-dismiss="modal">Back</button>
                                                                 <form
                                                                     action="{{ route('users.destroy', ['user' => $user->id]) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit"
-                                                                        class="btn btn-success">Yakin</button>
+                                                                        class="btn btn-success">Sure</button>
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -116,6 +115,7 @@
                     </div>
                 </div>
                 <script>
+                    $.fn.dataTable.ext.errMode = 'none';
                     $(document).ready(function() {
                         $('#allUsers').DataTable();
                     });

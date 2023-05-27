@@ -25,4 +25,9 @@ class Kuesioner extends Model
     {
         return $this->hasMany(Question::class);
     }
+
+    public function responses()
+    {
+        return $this->hasMany(Respon::class);
+    }
 }

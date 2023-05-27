@@ -8,13 +8,13 @@
                         <div class="card card-warning card-outline">
                             <div class="card-body text-center">
                                 <h5 class="card-text text-center fs-2 fw-bold mb-3">{{ $kuesioner->title }}</h5>
-                                <p class="card-subtitle text-body-secondary text-uppercase">Deskripsi</p>
+                                <p class="card-subtitle text-body-secondary text-uppercase">Description</p>
                                 <p class="card-text">{{ $kuesioner->description }}</p>
                                 <a href="{{ route('kuesioner.index') }}" class="btn btn-secondary btn-sm"><i
-                                        class="fa-sharp fa-solid fa-rotate-left"></i> Kembali</a>
+                                        class="fa-sharp fa-solid fa-rotate-left"></i> Back</a>
                                 <a class="btn btn-primary btn-sm" data-bs-toggle="modal"
                                     data-bs-target="#addQuestion{{ $kuesioner->id }}"><i class="fa-solid fa-plus"></i>
-                                    Buat Pertanyaan</a>
+                                    Create question</a>
                                 {{-- <a href="#" class="btn btn-success btn-sm">Another link</a> --}}
                             </div>
                         </div>
@@ -50,12 +50,12 @@
                         <div class="card card-info card-outline">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
-                                    <h4 class="fw-bold">Semua Pertanyaan</h4>
+                                    <h4 class="fw-bold">All Questions</h4>
                                     <div class="flex-column mb-2">
                                         <a href="{{ route('question.edit', [$kuesioner->id]) }}"
                                             class="btn btn-warning text-white" data-bs-toggle="tooltip"
-                                            title="Edit semua pertanyaan"><i class="fa-solid fa-pen-to-square"></i>
-                                            Edit Pertanyaan</a>
+                                            title="Edit all questions"><i class="fa-solid fa-pen-to-square"></i>
+                                            Edit Question</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -63,18 +63,16 @@
                                         <thead>
                                             <tr class="bg-dark">
                                                 <th scope="col">No</th>
-                                                <th scope="col">Pertanyaan</th>
-                                                <th scope="col">Tipe</th>
-                                                <th scope="col">Urutan Pertanyaan</th>
-                                                <th scope="col">Opsi</th>
+                                                <th scope="col">Question</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Option</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @if ($questions->isEmpty())
                                                 <tr>
-                                                    <td colspan="12" class="text-center">Belum ada pertanyaan, buat
-                                                        sekarang.
+                                                    <td colspan="12" class="text-center">No question yet, Create now
                                                     </td>
                                                 </tr>
                                             @else
@@ -83,7 +81,6 @@
                                                         <th scope="row">{{ $loop->iteration }}</th>
                                                         <td>{{ $question->question }}</td>
                                                         <td>{{ ucfirst($question->type) }}</td>
-                                                        <td>{{ $question->index }}</td>
                                                         <td>
                                                             @if ($question->type === 'text')
                                                                 <p>None</p>
@@ -91,19 +88,17 @@
                                                                 <ul>
                                                                     @if (!empty($question->choices))
                                                                         @foreach ($question->choices as $choice)
-                                                                            @foreach (explode(', ', $choice->option) as $option)
-                                                                                <li>{{ $option }}</li>
-                                                                            @endforeach
+                                                                            <li>{{ $choice->option }}</li>
                                                                         @endforeach
                                                                     @endif
                                                                 </ul>
                                                             @endif
-                                                        </td>
+                                                        </td>                                                        
                                                         <td>
                                                             @if ($question->type == 'multiple' && $question->choices->isEmpty())
                                                                 <a href="{{ route('add.choices', ['id' => $question->id]) }}"
-                                                                    class="btn btn-primary btn-sm"><i
-                                                                        class="fa-solid fa-plus"></i> Opsi</a>
+                                                                    class="btn btn-primary btn-sm" data-bs-toggle="tooltip" title="Add option choices"><i
+                                                                        class="fa-solid fa-plus"></i> Option</a>
                                                             @endif
                                                             <button type="button" data-bs-toggle="modal"
                                                                 data-bs-target="#deleteQuestion{{ $question->id }}"
@@ -123,17 +118,17 @@
                                                                 <div class="modal-header">
                                                                     <h1 class="modal-title fs-5 text-danger"
                                                                         id="deleteQuestionModal{{ $question->id }}"><i
-                                                                            class="fa-solid fa-trash"></i> Hapus pertanyaan
+                                                                            class="fa-solid fa-trash"></i> Delete Question
                                                                     </h1>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    Apakah anda yakin ingin menghapus pertanyaan ini?
+                                                                    Are you sure want to delete this question?
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
-                                                                        data-bs-dismiss="modal">Kembali</button>
+                                                                        data-bs-dismiss="modal">Back</button>
                                                                     <form
                                                                         action="{{ route('question.destroy', ['question' => $question->id]) }}"
                                                                         method="POST">
@@ -142,7 +137,7 @@
                                                                         <input type="hidden" name="kuesioner_id"
                                                                             value="{{ $kuesioner->id }}">
                                                                         <button type="submit"
-                                                                            class="btn btn-success">Yakin</button>
+                                                                            class="btn btn-success">Sure</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -173,7 +168,7 @@
                                                                     <input type="hidden" name="kuesioner_id"
                                                                         value="{{ $kuesioner->id }}">
                                                                     <div class="row">
-                                                                        <label for="question">Pertanyaan<span
+                                                                        <label for="question">Question<span
                                                                                 class="text-danger"> *</span></label>
                                                                         <input type="text" id="question"
                                                                             name="question"
@@ -190,11 +185,10 @@
                                                                     </div>
 
                                                                     <div class="row">
-                                                                        <label for="type" class="form-label">Tipe<span
+                                                                        <label for="type" class="form-label">Type of question<span
                                                                                 class="text-danger"> *</span></label>
                                                                         <select id="type" class="form-select mb-3"
                                                                             name="type">
-                                                                            <option>-- Pilih tipe perrtanyaan --</option>
                                                                             <option value="text"
                                                                                 {{ old('type') === 'text' ? 'selected' : '' }}>
                                                                                 Short Answer
@@ -205,28 +199,12 @@
                                                                             </option>
                                                                         </select>
                                                                     </div>
-
-                                                                    <div class="row">
-                                                                        <label for="index">Urutan Pertanyaan<span
-                                                                                class="text-danger"> *</span></label>
-
-                                                                        <input type="number" id="index"
-                                                                            name="index"
-                                                                            class="form-control @error('index') is-invalid @enderror"
-                                                                            placeholder="1" required>
-
-                                                                        @error('index')
-                                                                            <div class="invalid-feedback">
-                                                                                {{ $message }}
-                                                                            </div>
-                                                                        @enderror
-                                                                    </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-12 d-flex justify-content-center">
                                                                 <button id="submit" type="submit"
-                                                                    class="btn btn-success mt-3">Buat Pertanyaan</button>
+                                                                    class="btn btn-success mt-3">Create Question</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -246,6 +224,7 @@
     </div>
     <script>
         // Datatables
+        $.fn.dataTable.ext.errMode = 'none';
         $(document).ready(function() {
             $('#allQuestions').DataTable();
         });

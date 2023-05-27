@@ -30,19 +30,21 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+        $userId = auth()->user()->id;
         $kuesionerId = $request->input('kuesioner_id');
         try {
             $validatedData = $request->validate([
-                'index' => 'numeric|required|unique:questions,index,NULL,id,kuesioner_id,' . $kuesionerId,
                 'question' => 'string|max:200|required',
                 'type' => 'string|required',
             ]);
 
             $validatedData['kuesioner_id'] = $kuesionerId;
+            $validatedData['user_id'] = $userId;
             Question::create($validatedData);
-            return redirect()->route('kuesioner.show', $kuesionerId)->with('success', 'Berhasil membuat pertanyaan baru!');
+            return redirect()->route('kuesioner.show', $kuesionerId)->with('success', 'Succesfully create new question');
         } catch (Exception $e) {
-            return redirect()->route('kuesioner.show', $kuesionerId)->with('error', 'Error ketika membuat pertanyaan. coba lagi');
+            // return $e->getMessage();
+            return redirect()->route('kuesioner.show', $kuesionerId)->with('error', 'Error while creating question, Please try again.');
         }
     }
 
@@ -70,16 +72,16 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        dd($request->all());
+        $userId = auth()->user()->id;
         $kuesionerId = $request->input('kuesioner_id');
         try {
             $validatedData = $request->validate([
-                'index' => 'numeric|required|unique:questions,index,NULL,id,kuesioner_id,' . $kuesionerId,
                 'question' => 'string|max:200',
                 'type' => 'required|string'
             ]);
 
             $validatedData['kuesioner_id'] = $kuesionerId;
+            $validatedData['user_id'] = $userId;
             $question->update($validatedData);
             return redirect()->route('question.edit', $kuesionerId)->with('success', 'Successfully update a question');
         } catch (Exception $e) {
@@ -94,6 +96,6 @@ class QuestionController extends Controller
     {
         $kuesionerId = $req->input('kuesioner_id');
         $question->delete();
-        return redirect()->route('kuesioner.show', $kuesionerId)->with('success', "Berhasil menghapus pertanyaan!");
+        return redirect()->route('kuesioner.show', $kuesionerId)->with('success', "Question deleted successfully!");
     }
 }

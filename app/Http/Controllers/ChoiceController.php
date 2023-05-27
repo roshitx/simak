@@ -38,6 +38,6 @@ class ChoiceController extends Controller
         }
     
         $kuesionerId = Question::find($questionId)->kuesioner_id;
-        return redirect()->route('kuesioner.show', ['kuesioner' => $kuesionerId])->with('success', 'Berhasil membuat opsi jawaban baru!');
+        return redirect()->route('kuesioner.show', ['kuesioner' => $kuesionerId])->with('success', 'Successfully add new option!');
     }    
 }

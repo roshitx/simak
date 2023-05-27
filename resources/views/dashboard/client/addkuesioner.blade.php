@@ -6,7 +6,7 @@
                 <div class="col-md-8 mx-auto">
                     <div class="card card-outline card-warning">
                         <div class="card-header">
-                            <h1 class="m-0 text-uppercase fw-bold">Buat Kuesioner</h1>
+                            <h1 class="m-0 text-uppercase fw-bold">Create Questionnaire</h1>
                         </div>
                         <div class="card-body">
                             <div class="col-12">
@@ -20,7 +20,7 @@
                                 <form action="{{ route('kuesioner.store') }}" method="POST">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="title" class="form-label">Judul kuesioner: <span
+                                        <label for="title" class="form-label">Title questionnaire: <span
                                                 class="text-danger">*</span></label>
                                         <input type="text" name="title"
                                             class="form-control @error('title')
@@ -36,7 +36,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="description" class="form-label">Deskripsi: <span
+                                        <label for="description" class="form-label">Description: <span
                                                 class="text-danger">*</span></label>
                                         <textarea type="text" name="description"
                                             class="form-control @error('description')
