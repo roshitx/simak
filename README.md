@@ -1,4 +1,4 @@
-<h1 align="center">SIMAK</h1>
+<h1 align="center">Sistem Manajemen Kuesioner</h1>
 
 
 ## 🚀 Installation
